@@ -18,8 +18,8 @@ public class View {
     public static final ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
             new Locale("ua", "UA"));
 //            new Locale("en"));
-//    String DATE_CREATION = bundle.getString("date_creation");
-//    String DATE_MODIFICATION = bundle.getString("date_modification");
+    String DATE_CREATION = bundle.getString("date_creation");
+    String DATE_MODIFICATION = bundle.getString("date_modification");
     public void printMassage(String message) {
         System.out.println(message);
     }
@@ -43,19 +43,19 @@ public class View {
                                    bundle.getString(message)));
     }
 
-//    public void printAllUser(List<Model> user) {
+    public void printAllUser(List<Model> user) {
 
-//        for (int i = 1; i < user.size(); i++) {
-////            System.out.print(i + 1 + " ");
-//            System.out.println(user.get(i).getFullName());
-//            System.out.println(user.get(i).getHomePhone());
-//            System.out.println(user.get(i).getMobilePhone());
-//            System.out.println(user.get(i).getFullAddress());
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
-//            System.out.println(DATE_CREATION + dateFormat.format(user.get(i).getCreation()));
-//            System.out.println(DATE_MODIFICATION + dateFormat.format(user.get(i).getModification()));
-//
-//        }
-//    }
+        for (int i = 1; i < user.size(); i++) {
+            System.out.print(i + 1 + " ");
+            System.out.println(user.get(i).getFullName());
+            System.out.println(user.get(i).getHomePhone());
+            System.out.println(user.get(i).getMobilePhone());
+            System.out.println(user.get(i).getFullAddress());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+            System.out.println(DATE_CREATION + dateFormat.format(user.get(i).getCreation()));
+            System.out.println(DATE_MODIFICATION + dateFormat.format(user.get(i).getModification()));
+
+        }
+    }
 
 }

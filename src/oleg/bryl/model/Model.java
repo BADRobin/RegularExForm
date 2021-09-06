@@ -35,7 +35,7 @@ public class Model {
     private String roomNumber;
     private Date creation;
     private Date modification;
-//    private String value;
+    private String value;
 
     /**
      *
@@ -52,7 +52,7 @@ public class Model {
 //    }
 
     public Model() {
-//        users = new ArrayList<>();
+        users = new ArrayList<>();
     }
 
     public void addUser(){
@@ -92,18 +92,18 @@ public class Model {
 
 
     }
-//    public String getFullName() {
-//        return firstName + " " + name + " " + middleName;
-//    }
-//    public String getHomePhone() {
-//        return homePhone;
-//    }
-//    public String getMobilePhone() {
-//        return mobilePhone;
-//    }
-//    public  String getFullAddress() {
-//        return addressIndex + " " + city + " " + street + " " + homeNumber + " " + roomNumber;
-//    }
+    public String getFullName() {
+        return firstName + " " + name + " " + middleName;
+    }
+    public String getHomePhone() {
+        return homePhone;
+    }
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+    public  String getFullAddress() {
+        return addressIndex + " " + city + " " + street + " " + homeNumber + " " + roomNumber;
+    }
 
     public Gruppen getGroups() {
         return groups;
@@ -128,8 +128,8 @@ public class Model {
     public void setModification(Date modification) {
         this.modification = modification;
     }
-//    public List<Model> allUsers() {
-//        return users;
-//    }
+    public List<Model> allUsers() {
+        return users;
+    }
 }
 

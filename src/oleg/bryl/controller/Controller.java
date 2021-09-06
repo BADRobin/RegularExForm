@@ -25,17 +25,17 @@ public class Controller {
         model.addUser();
 
     }
-    public void printOutput(){
-        System.out.println();
-
-    }
-
 //    public void printOutput(){
+//        System.out.println();
+//
+//    }
+
+    public void printOutput(){
 //        Scanner scanner = new Scanner(System.in);
 //        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
 //        model.addUser();
-//        view.printAllUser(model.allUsers());
-//
-//    }
+        view.printAllUser(model.allUsers());
+
+    }
 
 }
