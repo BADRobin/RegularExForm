@@ -9,6 +9,11 @@ public class ControllerUtility {
     private Scanner scanner;
     private View view;
 
+    /**
+     *
+     * @param scanner
+     * @param view
+     */
     public ControllerUtility(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;

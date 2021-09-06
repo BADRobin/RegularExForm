@@ -37,6 +37,11 @@ public class Model {
     private Date modification;
 //    private String value;
 
+    /**
+     *
+     * @param view
+     * @param scanner
+     */
     public Model(View view, Scanner scanner) {
         this.view = view;
         this.scanner = scanner;

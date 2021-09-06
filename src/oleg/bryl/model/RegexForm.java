@@ -1,6 +1,7 @@
 package oleg.bryl.model;
 
 public interface RegexForm {
+
     String REGEX_FIRST_NAME_UA = "^[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє']{1,20}[а-щьюяґіїє']$";
     String REGEX_FIRST_NAME_EN = "^[A-Z][a-z]{1,20}$";
     String REGEX_NAME_UA = "^[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє']{1,20}[а-щьюяґіїє']$";

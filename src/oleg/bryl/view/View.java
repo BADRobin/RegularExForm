@@ -42,6 +42,7 @@ public class View {
                                    bundle.getString(INPUT_DATA),
                                    bundle.getString(message)));
     }
+
 //    public void printAllUser(List<Model> user) {
 
 //        for (int i = 1; i < user.size(); i++) {
@@ -56,4 +57,5 @@ public class View {
 //
 //        }
 //    }
+
 }
