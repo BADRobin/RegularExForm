@@ -7,6 +7,7 @@ public interface InputForm {
     String NAME = "input.name.data.regexp";
     String MIDDLE_NAME = "input.middle.name.data.regexp";
     String NICK_NAME = "input.nick.name.data.regexp";
+    String COMMENT = "input.comment.data.regexp";
     String GROUPS = "input.groups.names.regexp";
     String HOME_PHONE = "input.home.phone.data.regexp";
     String MOBILE_PHONE = "input.mobile.phone.data.regexp";

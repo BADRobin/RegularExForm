@@ -1,6 +1,7 @@
 package oleg.bryl.controller;
 
 import oleg.bryl.model.Model;
+//import oleg.bryl.model.User;
 import oleg.bryl.view.View;
 
 import java.util.Scanner;
@@ -16,8 +17,12 @@ public class Controller {
 
     public void inputFromUser (){
         Scanner scanner = new Scanner(System.in);
-        User user = new User(view, scanner);
-        user.addUser();
+        Model model = new Model(view, scanner);
+        model.addUser();
+
+    }
+    public void printOutput(){
+        System.out.println();
 
     }
 

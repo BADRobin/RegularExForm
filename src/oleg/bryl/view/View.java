@@ -1,5 +1,7 @@
 package oleg.bryl.view;
 
+//import oleg.bryl.model.User;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -35,4 +37,5 @@ public class View {
                                    bundle.getString(INPUT_DATA),
                                    bundle.getString(message)));
     }
+
 }
