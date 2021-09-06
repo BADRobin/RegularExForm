@@ -13,7 +13,8 @@ public interface RegexForm {
     String REGEX_MOBILE_PHONE = "[0-9]{10,15}$";
 
     String REGEX_NICK_NAME = "[A-Za-z0-9_.-]{1,20}$";
-    String REGEX_COMMENT = "[A-Za-z0-9_.-]{1,20}$";
+    String REGEX_COMMENT_UA = "[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє']{1,20}[а-щьюяґіїє']$";
+    String REGEX_COMMENT_EN = "[A-Za-z0-9_.-]{1,20}$";
 
     String REGEX_EMAIL = "[A-Za-z0-9_-]+[@]+[a-z]+[.]+[a-z]{1,20}$";
     String REGEX_SKYPE = "[A-Za-z0-9_-]{1,20}$";

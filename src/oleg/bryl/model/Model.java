@@ -3,11 +3,12 @@ package oleg.bryl.model;
 import oleg.bryl.controller.ControllerUtility;
 import oleg.bryl.view.View;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import static oleg.bryl.model.Gruppen.*;
-import static oleg.bryl.model.Gruppen.ГРУППА3;
 import static oleg.bryl.model.RegexForm.*;
 import static oleg.bryl.view.InputForm.*;
 import static oleg.bryl.view.InputForm.ROOM_NUMBER;
@@ -21,7 +22,7 @@ public class Model {
     private String middleName;
     private String nickName;
     private String comment;
-    Gruppen groups = Gruppen.valueOf(GROUP1, GROUP2, GROUP3, ГРУППА1,  ГРУППА2, ГРУППА3);
+    Gruppen groups = Gruppen.valueOf(Group1, Group2, Group3, Группа1, Группа2, Группа3);
     private String homePhone;
     private String mobilePhone;
     private String mobilePhone2;
@@ -34,14 +35,19 @@ public class Model {
     private String roomNumber;
     private Date creation;
     private Date modification;
+//    private String value;
 
     public Model(View view, Scanner scanner) {
         this.view = view;
         this.scanner = scanner;
     }
+    private List<Model> users;
+//    public String getValue() {
+//        return value;
+//    }
 
     public Model() {
-
+//        users = new ArrayList<>();
     }
 
     public void addUser(){
@@ -49,6 +55,7 @@ public class Model {
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_FIRST_NAME_UA : REGEX_FIRST_NAME_EN;
         String str1 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_NAME_UA : REGEX_NAME_EN;
         String str2 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_MIDDLE_NAME_UA : REGEX_MIDDLE_NAME_EN;
+        String comm = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_COMMENT_UA : REGEX_COMMENT_EN;
         String str3 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_GROUPS_UA : REGEX_GROUPS_EN;
         String str4 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_CITY_UA : REGEX_CITY_EN;
         String str5 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_STREET_UA : REGEX_STREET_EN;
@@ -60,7 +67,7 @@ public class Model {
         this.name = controllerUtility.inputValueFromScanner(NAME, str1);
         this.middleName = controllerUtility.inputValueFromScanner(MIDDLE_NAME, str2);
         this.nickName = controllerUtility.inputValueFromScanner(NICK_NAME, REGEX_NICK_NAME);
-        this.comment = controllerUtility.inputValueFromScanner(COMMENT, REGEX_COMMENT);
+        this.comment = controllerUtility.inputValueFromScanner(COMMENT, comm);
         this.groups = Gruppen.valueOf(controllerUtility.inputValueFromScanner(GROUPS, str3));
 //        this.groups = Gruppen.;
         this.homePhone = controllerUtility.inputValueFromScanner(HOME_PHONE, REGEX_HOME_PHONE);
@@ -80,6 +87,18 @@ public class Model {
 
 
     }
+//    public String getFullName() {
+//        return firstName + " " + name + " " + middleName;
+//    }
+//    public String getHomePhone() {
+//        return homePhone;
+//    }
+//    public String getMobilePhone() {
+//        return mobilePhone;
+//    }
+//    public  String getFullAddress() {
+//        return addressIndex + " " + city + " " + street + " " + homeNumber + " " + roomNumber;
+//    }
 
     public Gruppen getGroups() {
         return groups;
@@ -104,5 +123,8 @@ public class Model {
     public void setModification(Date modification) {
         this.modification = modification;
     }
+//    public List<Model> allUsers() {
+//        return users;
+//    }
 }
 

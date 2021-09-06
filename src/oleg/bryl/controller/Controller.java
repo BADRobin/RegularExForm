@@ -1,7 +1,6 @@
 package oleg.bryl.controller;
 
 import oleg.bryl.model.Model;
-//import oleg.bryl.model.User;
 import oleg.bryl.view.View;
 
 import java.util.Scanner;
@@ -25,5 +24,12 @@ public class Controller {
         System.out.println();
 
     }
+//    public void printOutput(){
+//        Scanner scanner = new Scanner(System.in);
+//        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+//        model.addUser();
+//        view.printAllUser(model.allUsers());
+//
+//    }
 
 }
