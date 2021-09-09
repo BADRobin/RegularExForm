@@ -11,7 +11,6 @@ import java.util.Scanner;
 import static oleg.bryl.model.Gruppen.*;
 import static oleg.bryl.model.RegexForm.*;
 import static oleg.bryl.view.InputForm.*;
-import static oleg.bryl.view.InputForm.ROOM_NUMBER;
 
 public class Model {
     private View view;
@@ -35,7 +34,6 @@ public class Model {
     private String roomNumber;
     private Date creation;
     private Date modification;
-    private String value;
 
     /**
      *
@@ -46,21 +44,16 @@ public class Model {
         this.view = view;
         this.scanner = scanner;
     }
-    private List<Model> users;
-//    public String getValue() {
-//        return value;
-//    }
 
     public Model() {
-        users = new ArrayList<>();
-    }
 
+    }
     public void addUser(){
         ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_FIRST_NAME_UA : REGEX_FIRST_NAME_EN;
         String str1 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_NAME_UA : REGEX_NAME_EN;
         String str2 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_MIDDLE_NAME_UA : REGEX_MIDDLE_NAME_EN;
-        String comm = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_COMMENT_UA : REGEX_COMMENT_EN;
+
         String str3 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_GROUPS_UA : REGEX_GROUPS_EN;
         String str4 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_CITY_UA : REGEX_CITY_EN;
         String str5 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_STREET_UA : REGEX_STREET_EN;
@@ -71,10 +64,8 @@ public class Model {
         this.firstName = controllerUtility.inputValueFromScanner(FIRST_NAME, str);
         this.name = controllerUtility.inputValueFromScanner(NAME, str1);
         this.middleName = controllerUtility.inputValueFromScanner(MIDDLE_NAME, str2);
-        this.nickName = controllerUtility.inputValueFromScanner(NICK_NAME, REGEX_NICK_NAME);
-        this.comment = controllerUtility.inputValueFromScanner(COMMENT, comm);
+
         this.groups = Gruppen.valueOf(controllerUtility.inputValueFromScanner(GROUPS, str3));
-//        this.groups = Gruppen.;
         this.homePhone = controllerUtility.inputValueFromScanner(HOME_PHONE, REGEX_HOME_PHONE);
         this.mobilePhone = controllerUtility.inputValueFromScanner(MOBILE_PHONE, REGEX_MOBILE_PHONE);
         this.mobilePhone2 = controllerUtility.inputValueFromScanner(MOBILE_PHONE2, REGEX_MOBILE_PHONE);
@@ -85,15 +76,39 @@ public class Model {
         this.street = controllerUtility.inputValueFromScanner(STREET, str5);
         this.homeNumber = controllerUtility.inputValueFromScanner(HOME_NUMBER, str6);
         this.roomNumber = controllerUtility.inputValueFromScanner(ROOM_NUMBER, str7);
-//        this.creation = controllerUtility.inputValueFromScanner(CREATION);
-        this.getCreation();
-//        this.modification = controllerUtility.inputValueFromScanner(MODIFICATION);
-        this.getModification();
-
-
     }
-    public String getFullName() {
-        return firstName + " " + name + " " + middleName;
+    public void addNickName(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.nickName = controllerUtility.inputValueFromScanner(NICK_NAME, REGEX_NICK_NAME);
+    }
+    public void addComment(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String comm = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_COMMENT_UA : REGEX_COMMENT_EN;
+        this.comment = controllerUtility.inputValueFromScanner(COMMENT, comm);
+    }
+
+
+
+
+
+//Создаем getter
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getMiddleName() {
+        return middleName;
+    }
+    public String getNickName() {
+        return nickName;
+    }
+    public String getComment() {
+        return comment;
+    }
+    public Gruppen getGroups() {
+        return groups;
     }
     public String getHomePhone() {
         return homePhone;
@@ -101,35 +116,52 @@ public class Model {
     public String getMobilePhone() {
         return mobilePhone;
     }
-    public  String getFullAddress() {
-        return addressIndex + " " + city + " " + street + " " + homeNumber + " " + roomNumber;
+    public String getMobilePhone2() {
+        return mobilePhone2;
     }
-
-    public Gruppen getGroups() {
-        return groups;
+    public String getEmail() {
+        return email;
     }
-
-    public void setGroups(Gruppen groups) {
-        this.groups = groups;
+    public String getSkype() {
+        return skype;
     }
-
+    public String getAddressIndex() {
+        return addressIndex;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getStreet() {
+        return street;
+    }
+    public String getHomeNumber() {
+        return homeNumber;
+    }
+    public String getRoomNumber() {
+        return roomNumber;
+    }
     public Date getCreation() {
         return creation;
     }
-
-    public void setCreation(Date creation) {
-        this.creation = creation;
-    }
-
     public Date getModification() {
         return modification;
     }
 
-    public void setModification(Date modification) {
-        this.modification = modification;
+    public String getFullName() {
+        return getFirstName() + " " + getName() + " " + getMiddleName();
     }
-    public List<Model> allUsers() {
-        return users;
+
+
+    public  String getFullAddress() {
+        return getAddressIndex() + " " + getCity() + " " + getStreet() + " " + getHomeNumber() + " " + getRoomNumber();
     }
+    public String getFullPhonesNumber(){
+        return getHomePhone() + " " + getMobilePhone() + " " + getMobilePhone2();
+    }
+
+
+
+
+
 }
 

@@ -6,7 +6,7 @@ import oleg.bryl.view.View;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullPointerException {
             Controller controller = new Controller(new Model(), new View());
 
         controller.inputFromUser();
