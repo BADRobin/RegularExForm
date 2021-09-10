@@ -15,6 +15,18 @@ public enum DBofUsers {
     private final String email;
     private final String skype;
 
+    /**
+     *
+     * @param firstName
+     * @param name
+     * @param middleName
+     * @param nickName
+     * @param homePhone
+     * @param mobilePhone
+     * @param mobilePhone2
+     * @param email
+     * @param skype
+     */
     DBofUsers(String firstName, String name, String middleName, String nickName, String homePhone, String mobilePhone, String mobilePhone2, String email, String skype) {
         this.firstName = firstName;
         this.name = name;
@@ -54,6 +66,11 @@ public enum DBofUsers {
         return skype;
     }
 
+    /**
+     *
+     * @param addFirstName
+     * @return
+     */
 
     public static boolean checkInformation(String addFirstName){
         for (DBofUsers user: DBofUsers.values()){

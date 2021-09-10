@@ -10,14 +10,12 @@ public class AlreadyRegistered extends Exception{
     private String mobilePhone2;
     private String email;
     private String skype;
-
     public String addFirstName() {
         return firstName;
     }
     public String addName() {
         return name;
     }
-
     public String addMiddleName() {
         return firstName;
     }
@@ -40,6 +38,19 @@ public class AlreadyRegistered extends Exception{
         return skype;
     }
 
+    /**
+     *
+     * @param message
+     * @param addFirstName
+     * @param addName
+     * @param addMiddleName
+     * @param addNickName
+     * @param addHomePhone
+     * @param addMobilePhone
+     * @param addMobilePhone2
+     * @param addEmail
+     * @param addSkype
+     */
 
     public AlreadyRegistered(String message, String addFirstName, String addName,
                              String addMiddleName, String addNickName, String addHomePhone,
@@ -55,4 +66,5 @@ public class AlreadyRegistered extends Exception{
         this.email = addEmail;
         this.skype = addSkype;
     }
+
 }

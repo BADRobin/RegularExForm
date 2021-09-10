@@ -18,8 +18,6 @@ public class View {
     public static final ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
 //            new Locale("ua", "UA"));
             new Locale("en"));
-//    String DATE_CREATION = bundle.getString("date_creation");
-//    String DATE_MODIFICATION = bundle.getString("date_modification");
     public void printMassage(String message) {
         System.out.println(message);
     }
@@ -49,6 +47,10 @@ public class View {
                                    bundle.getString(message)));
     }
 
+    /**
+     *
+     * @param message
+     */
     public void printInputIsWrong(String message) {
         printMassage(combineString(bundle.getString(WRONG_DATA),
                                    bundle.getString(INPUT_DATA),

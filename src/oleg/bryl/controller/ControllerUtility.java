@@ -17,6 +17,13 @@ public class ControllerUtility {
         this.scanner = scanner;
         this.view = view;
     }
+
+    /**
+     *
+     * @param message
+     * @param regex
+     * @return
+     */
     public String inputValueFromScanner(String message, String regex){
         String inp;
         view.printInput(message);

@@ -1,6 +1,7 @@
 package oleg.bryl.view;
 
 public interface InputForm {
+
     String INPUT_DATA = "input.data.regexp";
     String WRONG_DATA = "input.wrong.data";
     String FIRST_NAME = "input.first.name.data.regexp";

@@ -150,6 +150,10 @@ public class Model {
         this.roomNumber = controllerUtility.inputValueFromScanner(ROOM_NUMBER, REGEX_ROOM_NUMBER);
     }
 
+    /**
+     *
+     * @return
+     */
 //Создаем getter
     public String getFirstName() {
         return firstName;
@@ -205,12 +209,5 @@ public class Model {
     public Date getModification() {
         return modification;
     }
-
-
-
-
-
-
-
 }
 

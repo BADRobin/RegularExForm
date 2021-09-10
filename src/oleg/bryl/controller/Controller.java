@@ -28,6 +28,11 @@ public class Controller {
         System.out.println(user);
         }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
         private User getUser(Model model){
             User user  = null;
             while (true){
@@ -55,4 +60,5 @@ public class Controller {
             }
             return user;
         }
+
 }

@@ -27,6 +27,29 @@ public class User {
     private Date creation;
     private Date modification;
 
+    /**
+     *
+     * @param firstName
+     * @param name
+     * @param middleName
+     * @param nickName
+     * @param comment
+     * @param groups
+     * @param homePhone
+     * @param mobilePhone
+     * @param mobilePhone2
+     * @param email
+     * @param skype
+     * @param addressIndex
+     * @param city
+     * @param street
+     * @param homeNumber
+     * @param roomNumber
+     * @param getHomeNumber
+     * @param creation
+     * @param modification
+     * @throws AlreadyRegistered
+     */
 
     public User(String firstName, String name, String middleName, String nickName, String comment, Gruppen groups,
                 String homePhone, String mobilePhone, String mobilePhone2, String email, String skype, String addressIndex,
@@ -55,6 +78,10 @@ public class User {
         this.modification = modification;
     }
 
+    /**
+     *
+     * @return
+     */
 
     public String getFirstName() {
         return firstName;
@@ -200,6 +227,7 @@ public class User {
         this.modification = modification;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -223,4 +251,5 @@ public class User {
                 ", modification=" + modification +
                 '}';
     }
+
 }
