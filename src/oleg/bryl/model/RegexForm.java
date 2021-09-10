@@ -24,9 +24,7 @@ public interface RegexForm {
     String REGEX_CITY_EN = "^[A-Z][a-z]{1,20}$";
     String REGEX_STREET_UA = "^[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє']{1,20}$";
     String REGEX_STREET_EN = "^[A-Z][a-z]{1,20}$";
-    String REGEX_HOME_NUMBER_UA = "[0-9]{1,500}$";
-    String REGEX_HOME_NUMBER_EN = "[0-9]{1,500}$";
-    String REGEX_ROOM_NUMBER_UA = "[0-9]{1,500}$";
-    String REGEX_ROOM_NUMBER_EN = "[0-9]{1,500}$";
+    String REGEX_HOME_NUMBER= "[0-9]{1,500}$";
+    String REGEX_ROOM_NUMBER = "[0-9]{1,500}$";
 
 }

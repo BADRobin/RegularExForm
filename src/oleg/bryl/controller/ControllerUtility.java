@@ -2,7 +2,6 @@ package oleg.bryl.controller;
 
 import oleg.bryl.view.View;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ControllerUtility {

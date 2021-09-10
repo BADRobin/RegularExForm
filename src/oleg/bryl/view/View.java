@@ -18,16 +18,15 @@ public class View {
     public static final ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
 //            new Locale("ua", "UA"));
             new Locale("en"));
-    String DATE_CREATION = bundle.getString("date_creation");
-    String DATE_MODIFICATION = bundle.getString("date_modification");
+//    String DATE_CREATION = bundle.getString("date_creation");
+//    String DATE_MODIFICATION = bundle.getString("date_modification");
     public void printMassage(String message) {
         System.out.println(message);
     }
 
     /**
      *
-     * @param massage
-     * @return
+     * @param message
      */
     private void printMessage(String message){
         System.out.println(message);
@@ -56,21 +55,5 @@ public class View {
                                    bundle.getString(message)));
     }
 
-//    public void printAllUser(List<Model> users){
-
-//        String[] strings = new String[0];
-//        for (Model s : users) {
-////            System.out.print(s + 1 + " ");
-//            System.out.println(Model.getFullName());
-//            System.out.println(users.get(Integer.parseInt(String.valueOf(s))).getHomePhone());
-//            System.out.println(users.get(Integer.parseInt(String.valueOf(s))).getMobilePhone());
-//            System.out.println(users.get(Integer.parseInt(String.valueOf(s))).getFullAddress());
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
-//            System.out.println(DATE_CREATION + dateFormat.format(users.get(Integer.parseInt(String.valueOf(s))).getCreation()));
-//            System.out.println(DATE_MODIFICATION + dateFormat.format(users.get(Integer.parseInt(String.valueOf(s))).getModification()));
-//
-//        }
-
-//    }
 
 }

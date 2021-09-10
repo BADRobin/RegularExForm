@@ -48,23 +48,23 @@ public class Model {
     public Model() {
 
     }
+
     public void addUser(){
         ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_FIRST_NAME_UA : REGEX_FIRST_NAME_EN;
         String str1 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_NAME_UA : REGEX_NAME_EN;
         String str2 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_MIDDLE_NAME_UA : REGEX_MIDDLE_NAME_EN;
-
+        String comm = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_COMMENT_UA : REGEX_COMMENT_EN;
         String str3 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_GROUPS_UA : REGEX_GROUPS_EN;
         String str4 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_CITY_UA : REGEX_CITY_EN;
         String str5 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_STREET_UA : REGEX_STREET_EN;
-        String str6 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_HOME_NUMBER_UA : REGEX_HOME_NUMBER_EN;
-        String str7 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_ROOM_NUMBER_UA : REGEX_ROOM_NUMBER_EN;
 
 
         this.firstName = controllerUtility.inputValueFromScanner(FIRST_NAME, str);
         this.name = controllerUtility.inputValueFromScanner(NAME, str1);
         this.middleName = controllerUtility.inputValueFromScanner(MIDDLE_NAME, str2);
-
+        this.nickName = controllerUtility.inputValueFromScanner(NICK_NAME, REGEX_NICK_NAME);
+        this.comment = controllerUtility.inputValueFromScanner(COMMENT, comm);
         this.groups = Gruppen.valueOf(controllerUtility.inputValueFromScanner(GROUPS, str3));
         this.homePhone = controllerUtility.inputValueFromScanner(HOME_PHONE, REGEX_HOME_PHONE);
         this.mobilePhone = controllerUtility.inputValueFromScanner(MOBILE_PHONE, REGEX_MOBILE_PHONE);
@@ -74,8 +74,24 @@ public class Model {
         this.addressIndex = controllerUtility.inputValueFromScanner(ADDRESS_INDEX, REGEX_ADDRESS_INDEX) ;
         this.city = controllerUtility.inputValueFromScanner(CITY, str4);
         this.street = controllerUtility.inputValueFromScanner(STREET, str5);
-        this.homeNumber = controllerUtility.inputValueFromScanner(HOME_NUMBER, str6);
-        this.roomNumber = controllerUtility.inputValueFromScanner(ROOM_NUMBER, str7);
+        this.homeNumber = controllerUtility.inputValueFromScanner(HOME_NUMBER, REGEX_HOME_NUMBER);
+        this.roomNumber = controllerUtility.inputValueFromScanner(ROOM_NUMBER, REGEX_ROOM_NUMBER);
+    }
+
+    public void addFirstName(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_FIRST_NAME_UA : REGEX_FIRST_NAME_EN;
+        this.firstName = controllerUtility.inputValueFromScanner(FIRST_NAME, str);
+    }
+    public void addName(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str1 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_NAME_UA : REGEX_NAME_EN;
+        this.name = controllerUtility.inputValueFromScanner(NAME, str1);
+    }
+    public void addMiddleName(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str2 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_MIDDLE_NAME_UA : REGEX_MIDDLE_NAME_EN;
+        this.middleName = controllerUtility.inputValueFromScanner(MIDDLE_NAME, str2);
     }
     public void addNickName(){
         ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
@@ -86,10 +102,53 @@ public class Model {
         String comm = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_COMMENT_UA : REGEX_COMMENT_EN;
         this.comment = controllerUtility.inputValueFromScanner(COMMENT, comm);
     }
-
-
-
-
+    public void addGroup(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str3 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_GROUPS_UA : REGEX_GROUPS_EN;
+        this.groups = Gruppen.valueOf(controllerUtility.inputValueFromScanner(GROUPS, str3));
+    }
+    public void addHomePhone(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.homePhone = controllerUtility.inputValueFromScanner(HOME_PHONE, REGEX_HOME_PHONE);
+    }
+    public void addMobilePhone(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.mobilePhone = controllerUtility.inputValueFromScanner(MOBILE_PHONE, REGEX_MOBILE_PHONE);
+    }
+    public void addHomePhone2(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.mobilePhone2 = controllerUtility.inputValueFromScanner(MOBILE_PHONE2, REGEX_MOBILE_PHONE);
+    }
+    public void addEmail(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.email = controllerUtility.inputValueFromScanner(EMAIL, REGEX_EMAIL);
+    }
+    public void addSkype(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.skype = controllerUtility.inputValueFromScanner(SKYPE, REGEX_SKYPE) ;
+    }
+    public void addAddressIndex(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.addressIndex = controllerUtility.inputValueFromScanner(ADDRESS_INDEX, REGEX_ADDRESS_INDEX) ;
+    }
+    public void addCity(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str4 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_CITY_UA : REGEX_CITY_EN;
+        this.city = controllerUtility.inputValueFromScanner(CITY, str4);
+    }
+    public void addStreet(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        String str5 = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_STREET_UA : REGEX_STREET_EN;
+        this.street = controllerUtility.inputValueFromScanner(STREET, str5);
+    }
+    public void addHomeNumber(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.homeNumber = controllerUtility.inputValueFromScanner(HOME_NUMBER, REGEX_HOME_NUMBER);
+    }
+    public void addRoomNumber(){
+        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
+        this.roomNumber = controllerUtility.inputValueFromScanner(ROOM_NUMBER, REGEX_ROOM_NUMBER);
+    }
 
 //Создаем getter
     public String getFirstName() {
@@ -147,17 +206,7 @@ public class Model {
         return modification;
     }
 
-    public String getFullName() {
-        return getFirstName() + " " + getName() + " " + getMiddleName();
-    }
 
-
-    public  String getFullAddress() {
-        return getAddressIndex() + " " + getCity() + " " + getStreet() + " " + getHomeNumber() + " " + getRoomNumber();
-    }
-    public String getFullPhonesNumber(){
-        return getHomePhone() + " " + getMobilePhone() + " " + getMobilePhone2();
-    }
 
 
 

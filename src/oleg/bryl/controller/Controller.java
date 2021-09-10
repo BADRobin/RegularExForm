@@ -24,7 +24,6 @@ public class Controller {
         Scanner scanner = new Scanner(System.in);
         Model model = new Model(view, scanner);
         model.addUser();
-//        System.out.println(model.print());
         User user = getUser(model);
         System.out.println(user);
         }
@@ -33,30 +32,27 @@ public class Controller {
             User user  = null;
             while (true){
                 try{
-                    user = new User(model.getFullName(), model.getNickName(), model.getComment(), model.getGroups(),
-                            model.getFullPhonesNumber(), model.getEmail(), model.getSkype(), model.getFullAddress(),
-                            model.getCreation(), model.getModification());
+                    user = new User(model.getFirstName(), model.getName(), model.getMiddleName(), model.getNickName(),
+                            model.getComment(), model.getGroups(), model.getHomePhone(), model.getMobilePhone(),
+                            model.getMobilePhone2(), model.getEmail(), model.getSkype(), model.getAddressIndex(),
+                            model.getCity(), model.getStreet(), model.getHomeNumber(), model.getRoomNumber(), model.getHomeNumber(),
+                            model.getCreation(), model.getModification()) ;
+
                     break;
-                } catch (SkypeNameIsRegistered e){
+                } catch (AlreadyRegistered e){
                         e.printStackTrace();
-                    System.out.println("It's Skype Name already created:  " + e.getSkypeDate() );
-                    model.addUser();
+                    System.out.println("It's First Name already created:  " + e.addFirstName() );
+                    System.out.println("It's First Name already created:  " + e.addName() );
+                    System.out.println("It's First Name already created:  " + e.addMiddleName() );
+                    System.out.println("It's First Name already created:  " + e.addNickName() );
+                    System.out.println("It's First Name already created:  " + e.addHomePhone() );
+                    System.out.println("It's First Name already created:  " + e.addMobilePhone() );
+                    System.out.println("It's First Name already created:  " + e.addMobilePhone2() );
+                    System.out.println("It's First Name already created:  " + e.addEmail() );
+                    System.out.println("It's First Name already created:  " + e.addSkype() );
+                    model.addFirstName();
                 }
             }
             return user;
         }
-
-//    public void printOutput(){
-//        System.out.println();
-//
-//    }
-
-//    public void printOutput(){
-//        Scanner scanner = new Scanner(System.in);
-////        ControllerUtility controllerUtility = new ControllerUtility(scanner, view);
-//        Model model = new Model(view, scanner);
-//        model.addUser();
-//        view.printAllUser(model.getUsers());
-//    }
-
 }
